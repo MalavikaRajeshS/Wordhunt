@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Word Game</title>
+    <style>
+        body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: pink;
+}
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: palevioletred;
+}
+input {
+    display: block;
+    margin: 5px auto;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Word Guessing Game</h1>
+    <div id="game">
+        <button onclick="startGame('Easy')">Start Easy</button>
+        <button onclick="startGame('Medium')">Start Medium</button>
+        <button onclick="startGame('Hard')">Start Hard</button>
+
+        <div id="word-container" style="display:none;">
+            <h2 id="word"></h2>
+            <input type="text" id="word1" placeholder="Word 1">
+            <input type="text" id="word2" placeholder="Word 2">
+            <input type="text" id="word3" placeholder="Word 3">
+            <!-- <input type="text" id="word4" placeholder="Word 4">
+            <input type="text" id="word5" placeholder="Word 5"> -->
+            <button onclick="submitAnswers()">Submit</button>
+        </div>
+        <h3 id="message"></h3>
+    </div>
+    <script>
+        let currentWord = "";
+
+function startGame(level) {
+    fetch(`/get_word/${level}/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert("No words found!");
+            } else {
+                currentWord = data.word;
+                document.getElementById("word").innerText = currentWord;
+                document.getElementById("word-container").style.display = "block";
+                document.getElementById("message").innerText = "";
+            }
+        });
+}
+
+function getCSRFToken() {
+    return document.cookie.split("; ")
+        .find(row => row.startsWith("csrftoken="))
+        ?.split("=")[1];
+}
+
+function submitAnswers() {
+    let userWords = [
+        document.getElementById("word1").value.trim(),
+        document.getElementById("word2").value.trim(),
+        document.getElementById("word3").value.trim(),
+    ];
+
+    console.log("🔹 Sending to server:", { word: currentWord, user_words: userWords });
+
+    fetch("/check_answers/", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": getCSRFToken()  // Ensure CSRF is included
+        },
+        body: `word=${encodeURIComponent(currentWord)}&user_words[]=${userWords.map(encodeURIComponent).join("&user_words[]=")}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("🔹 Response from server:", data); // Debugging output
+        if (data.status === "passed") {
+            document.getElementById("message").innerText = "You passed! Try next level.";
+        } else {
+            document.getElementById("message").innerText = "Game Over!";
+            console.log("🔹 Correct Answers:", data.correct_answers);  // Show correct answers in console
+        }
+    })
+    .catch(error => console.error("❌ Fetch Error:", error));
+}
+
+
+
+    </script>
+</body>
+</html>
