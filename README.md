@@ -10,11 +10,6 @@ Member 1: Malavika R S - College of Engineering Perumon
 
 Member 2: Rithika R D - College of Engineering Perumon
 
-
-Hosted Project Link
-
-[mention your project hosted project link here]
-
 Project Description
 
 A fun and interactive word-guessing game where players try to guess valid words based on a given word within different difficulty levels.
