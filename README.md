@@ -1,99 +1,92 @@
-# [Project Name] 🎯
+Word Guessing Game 🎯
+
+Basic Details
+
+Team Name: Infinity
+
+Team Members
+
+Member 1: Malavika R S - College of Engineering Perumon
+
+Member 2: Rithika R D - College of Engineering Perumon
 
 
-## Basic Details
-### Team Name: [Name]
+Hosted Project Link
 
-
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
-
-### Hosted Project Link
 [mention your project hosted project link here]
 
-### Project Description
-[2-3 lines about what your project does]
+Project Description
 
-### The Problem statement
-[What ridiculous problem are you solving?]
+A fun and interactive word-guessing game where players try to guess valid words based on a given word within different difficulty levels.
 
-### The Solution
-[How are you solving it? Keep it fun!]
+The Problem Statement
 
-## Technical Details
-### Technologies/Components Used
-For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+People often struggle with vocabulary building and quick thinking in word games. Traditional word games can feel repetitive and lack engagement.
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+The Solution
 
-### Implementation
-For Software:
-# Installation
-[commands]
+We bring an exciting twist to word games by integrating difficulty levels, a database-driven word-checking system, and a user-friendly interface to keep players engaged while improving their vocabulary!
 
-# Run
-[commands]
+Technical Details
 
-### Project Documentation
+Technologies/Components Used
+
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+Languages Used: Python, JavaScript, HTML, CSS
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Frameworks Used: Django, XAMPP
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+Tools Used: VS Code, GitHub
 
 For Hardware:
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+Laptop/PC with at least Intel i5/i7 or AMD Ryzen 5/7, 16GB RAM, and SSD storage
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+Implementation
 
-# Build Photos
-![Team](Add photo of your team here)
+For Software:
+
+Installation
+
+# Clone the repository
+git clone [repository link]
+cd word-game
+
+# Set up virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install dependencies
+pip install django mysqlclient
+
+# Run migrations
+python manage.py migrate
+
+Run
+
+# Start the server
+python manage.py runserver
+
+Project Documentation
+
+For Software:
+
+Screenshots (Add at least 3)
+
+![Screenshot 2025-02-09 100654](https://github.com/user-attachments/assets/3cfdc6a7-a50f-4e7f-95c7-c8af6dcc57d7)
+]
+Game start screen
+
+![![Screenshot 2025-02-09 100712](https://github.com/user-attachments/assets/d0b0fdb7-ff10-4171-843a-f5650cea5258)
+]
+Word guessing in action
+
+![![Screenshot 2025-02-09 100737](https://github.com/user-attachments/assets/58bb514c-916b-4706-b463-a44520d75124)
+](Add screenshot 3 here with proper name)
+Game over screen
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
----
 Made with ❤️ at TinkerHub
+
