@@ -1,4 +1,4 @@
-Word Guessing Game 🎯
+Word Guessing Game -WordHunt 🎯
 
 Basic Details
 
@@ -50,7 +50,7 @@ For Software:
 Installation
 
 # Clone the repository
-git clone [repository link]
+git clone https://github.com/MalavikaRajeshS/Wordhunt
 cd word-game
 
 # Set up virtual environment
@@ -72,7 +72,7 @@ Project Documentation
 
 For Software:
 
-Screenshots (Add at least 3)
+Screenshots
 
 ![Screenshot 2025-02-09 100654](https://github.com/user-attachments/assets/3cfdc6a7-a50f-4e7f-95c7-c8af6dcc57d7)
 ]
@@ -83,7 +83,7 @@ Game start screen
 Word guessing in action
 
 ![![Screenshot 2025-02-09 100737](https://github.com/user-attachments/assets/58bb514c-916b-4706-b463-a44520d75124)
-](Add screenshot 3 here with proper name)
+]
 Game over screen
 
 
